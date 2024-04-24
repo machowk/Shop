@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MyShop</title>
+    <link rel="stylesheet" href="/zamow.css">
+    <style>
+        /* Styl dla formularza wyszukiwania */
+        form {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 800px;
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: black;
+            color: white;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #706d6d;
+        }
+    </style>
+</head>
+<body>
+<header th:replace="~{fragments/header :: ShopHeader}"></header>
+
+<!-- Formularz wyszukiwania -->
+<form action="/home" method="get">
+    <input type="text" name="query" placeholder="Wyszukaj przedmiot...">
+    <button type="submit">Szukaj</button>
+</form>
+
+
+<div class="main-content">
+    <div class="item" th:each="item : ${items}">
+        <p class="item-name" th:text="${item.name}"></p>
+
+        <img th:src="@{${item.img}}">
+
+        <div>
+            <span>Cena: </span>
+            <span th:text="${item.price}"> </span>
+            <span>zł</span>
+        </div>
+        <a th:href="@{ '/add/' + ${item.id}}" class="add-btn">Dodaj</a>
+    </div>
+
+</div>
+
+
+<!-- Wyświetlanie przedmiotów -->
+<div>
+    <h2>Wszystkie przedmioty:</h2>
+    <ul>
+        <li th:each="item : ${items}">
+            <span th:text="${item.name}"></span> - <span th:text="${item.price}"></span> PLN
+        </li>
+    </ul>
+</div>
+
+
+</body>
+
+</html>

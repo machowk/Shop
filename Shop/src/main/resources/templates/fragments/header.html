@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<header th:fragment="ShopHeader">
+    <link rel="stylesheet" href="/zamow.css">
+    <div class="btnn-group">
+        <button class="buttonn new-btn" >
+            <a  href="strona">
+                <span style='font-size:25px;' color="white">&#127968;</span>
+            </a>
+        </button>
+    </div>
+
+
+    <div class="cart-info">
+        <a th:href="@{/order/cart}" class="cart-ico">
+            <div class="cart-summary">
+                <span class="cart-label">Koszyk (<span th:text="${@cart.counter}"></span>)</span>
+                <span class="cart-total" th:text="${@cart.sum}"></span>
+                <span class="cart-currency">zł </span>
+                <span style='font-size:25px;'>  &#128722;</span>
+            </div>
+        </a>
+    </div>
+</header>
+
+</body>
+</html>

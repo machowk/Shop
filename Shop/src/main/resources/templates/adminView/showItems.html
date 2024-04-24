@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Items</title>
+    <link rel="stylesheet" href="/edit.css">
+    <style>
+            .btn {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            }
+
+            .btn:hover {
+            background-color: #4CAF50;
+            }
+    </style>
+</head>
+<body>
+<header>
+    <span class="Lista Przedmiotów">MyShop</span>
+</header>
+<div class="main-content">
+    <div class="summary">
+        <h1>Add item</h1>
+
+        <form action="/admin/items/add" method="post">
+            <label>Nazwa</label>
+            <input type="text" name="name" required>
+            <label>Cena</label>
+            <input type="number" min="0.01" step="0.01" name="price" required>
+            <label>Img</label>
+            <input type="text" name="img">
+            <button type="submit">Dodaj</button>
+        </form>
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="summary">
+        <h1>Items</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Edit item</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.price}"></td>
+                <td>
+
+                    <a th:href="@{/admin/items/{id}/edit(id=${item.id})}" class="btn">Edit</a>
+                </td>
+                <td>
+                    <form th:action="@{/admin/items/{id}/delete(id=${item.id})}" method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

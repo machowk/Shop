@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+}
+
+header{
+    background-color: #706d6d;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+.main-content {
+    background-color: rgb(230, 230, 230);
+    margin: auto;
+    margin-top: 30px;
+    width: 75%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+
+.item{
+    background-color: rgb(255, 255, 255);
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.item-name{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 3px;
+    font-size: larger;
+    font-weight: bold;
+    width: calc(100% - 6px);
+    margin-top: 0;
+}
+
+.item img{
+    width: 100px;
+    height: 150px;
+}
+
+.add-btn{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    width: 70%;
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.add-btn:hover {
+    background-color: rgb(88, 88, 88);
+}
+
+.cart-ico{
+    text-decoration: none;
+    color: white;
+}
+
+.cart-ico:hover{
+    color: brown;
+}
+
+table, tr {
+    width: 80%;
+    border: 1px solid black;
+}
+
+th{
+    text-align: left;
+    border: 1px solid black;;
+}
+
+td img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.mbtn{
+    background-color: blanchedalmond;
+    text-decoration: none;
+    display: block;
+    width: 30px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 5px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+td p{
+    margin: 3px;
+    padding: 5px
+}
+
+form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label{
+    width: 100%;
+}
+
+.infoMsg{
+    width: 100%;
+    color: green;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+
+/* nowe wygląd header "zakupy */
+.cart-info {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.cart-summary {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.cart-label {
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.cart-total {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.cart-currency {
+    font-size: 1rem;
+    margin-left: 5px;
+}
+
+/* Nowy przycisk */
+.new-btn {
+    background-color: #333; /* Kolor tła */
+    color: white; /* Kolor tekstu */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Animacja zmiany koloru tła */
+    margin-right: 10px; /* Dodajemy odstęp między przyciskami */
+}
+
+.new-btn:hover {
+    background-color: #333; /* Kolor tła po najechaniu myszką */
+}
+
