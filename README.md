@@ -18,4 +18,4 @@ loclahost/H2-console - Hamilton1! ...... :) zgadza się
                      
 localhost/start -to w sumie jeszcze niedokończone bo  to będzie tylko wygląd
 
-tak robiłem z chatem gpt :P
+
